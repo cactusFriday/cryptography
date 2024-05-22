@@ -1,6 +1,7 @@
+%define buildid @BUILDID@
 %bcond_without tests
 
-%{!?python3_pkgversion:%global python3_pkgversion 3}
+# %{!?python3_pkgversion:%global python3_pkgversion 3}
 
 %global srcname cryptography
 
@@ -18,6 +19,7 @@ Source0:        https://github.com/pyca/cryptography/archive/%{version}/%{srcnam
                 # created by ./vendor_rust.py helper script
 Source1:        cryptography-%{version}-vendor.tar.bz2
 Source2:        conftest-skipper.py
+BuildArch:      noarch
 
 ExclusiveArch:  %{rust_arches}
 
